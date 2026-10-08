@@ -1,0 +1,88 @@
+﻿PariPari Anti-HDR (JXR-SDR) — version 1.7
+
+START
+Double-click PariPari Anti-HDR 1.7.exe. No installation or internet needed.
+Uses the Windows JPEG XR codec and .NET Framework. Windows x64.
+Russian instructions: README.ru.txt.
+
+LANGUAGE
+English is the default. Click the flag button in the top-right corner to switch
+between English (UK flag) and Russian (Russian flag). The flag shows the current
+language; the tooltip shows the switch direction.
+Changes apply immediately and preserve loaded files, adjustments, Auto mode
+and zoom. Your choice is remembered for future launches in:
+%LOCALAPPDATA%\PariPari Anti-HDR\language.txt
+Native Windows dialog controls and OS error details follow your Windows
+language; the app's own titles, labels, tooltips and messages are translated.
+
+USAGE
+1. Add files with the file-plus icon, or open a folder with folder-plus.
+   You can also drop JXR files or folders into the window. Subfolders are
+   not scanned. The circular arrow above the list clears the list.
+2. Select an image. Scroll over its preview to zoom, drag to pan, double-click
+   to fit. The four-arrow icon toggles actual size and fit to window.
+3. Drag the point in the adjustment pad: up/down for brightness,
+   right/left for saturation. You can also edit the numbers or use arrow keys.
+   Brightness: -5 to +5 EV. Color: 0 to 130% saturation.
+4. Click Auto to analyze each image separately. Auto chooses exposure and
+   highlight compression, starting with 100% saturation. Fine-tune the point
+   as needed: corrections are retained per image during this session.
+   Highlighted Auto means it is on. Click again to return to your previous
+   manual values. Turning Auto on again starts a fresh automatic pass and
+   discards earlier Auto corrections. Reset exits Auto and restores -3 EV / 50%.
+5. Save selected / Save all writes full-resolution SDR PNG next to each source.
+   With Auto on, each image uses its own settings, including your corrections.
+   Unviewed images are analyzed during export. With Auto off, all images use
+   the current manual settings. Zoom does not affect export resolution.
+6. Show PNG in folder reveals the selected image's result in Explorer, or opens
+   the last output folder. Stop finishes the current image and cancels the rest.
+
+Delete removes the selected list entry; files on disk are left intact.
+Ctrl+O: add files. Ctrl+S: save selected. Ctrl+Shift+S: save all.
+PNG names end in _SDR, with a number added if needed. No original or existing
+PNG is overwritten. Output: original dimensions, RGB 8-bit, sRGB and gAMA tags.
+
+COLOR PROCESSING
+Input: JXR/WDP/HDP decoded by Windows to floating-point RGB/RGBA scRGB.
+Ordinary SDR PNG and other HDR formats are not supported. Limit: 45 MP.
+Manual mode uses a Reinhard luminance curve. Auto uses a generalized Reinhard
+curve fitted to luminance percentiles, with bounded exposure adaptation.
+It samples up to 512x512 positions, excludes near-black pixels from statistics,
+uses the median for partial adaptation, the 90th percentile to constrain bright
+areas, and the 99th percentile to guide highlight compression. A single hot
+pixel does not set the white point. Automatic exposure: -5 to +1.5 EV.
+Colors outside sRGB are compressed toward the neutral axis before sRGB encoding.
+Signed RGB is retained until gamut mapping. Alpha is composited onto black.
+Auto is a practical starting point, not a reconstruction of artistic intent.
+Saturation remains a manual preference; generative AI is not used.
+Preview and export use the same color conversion.
+
+SOURCE AND BUILD
+Source\Program.cs: conversion, UI, export and native folder picker.
+Source\Widgets.cs: icons, adjustment pad and image viewport.
+Source\AutoTone.cs: automatic luminance analysis and tone curve.
+Source\Localization.cs: English/Russian text and language preference.
+Source\Theme.cs: neon panels, buttons, vector flags and embedded banner.
+Source\Assets\Banner.png: original supplied banner, embedded in the executable.
+The executable runs on its own; no external image file is needed.
+Source\build.ps1: build with the Windows .NET Framework compiler; no downloads.
+
+COMMAND LINE
+"PariPari Anti-HDR 1.7.exe" --convert "input.jxr" "output-folder" 0 100
+The last two values are EV and saturation percentage (defaults: 0 and 100).
+For the GUI's manual starting values, use -3 50.
+"PariPari Anti-HDR 1.7.exe" --convert-auto "input.jxr" "output-folder"
+Exit status: 0 on success, 1 on error. This GUI build has no console window.
+
+VERIFICATION
+Auto tested on eight HDR screenshots, black/dark scenes, isolated highlights,
+invalid floats, manual corrections, batch export and fast selection changes.
+Manual rendering remains identical to 1.4. Export matches full-size preview.
+1.6: checked English defaults, live Russian/English switching, translated
+labels/tooltips/accessibility, saved preferences, restart behavior, fallback
+for missing/invalid preferences, minimum window layouts and preservation
+of image adjustments and zoom when switching languages.
+
+1.7: supplied banner, cyan/teal theme, angled panel and button outlines,
+hover states and flag language switch. Checked both languages, minimum window
+layout, preserved image adjustments/zoom, preference persistence and export.

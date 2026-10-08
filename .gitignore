@@ -1,0 +1,8 @@
+*.exe
+*.zip
+*.pdb
+Source/.build-temp/
+.vs/
+bin/
+obj/
+language.txt
