@@ -1,7 +1,7 @@
 ﻿PariPari Anti-HDR (JXR-SDR) — version 1.7
 
 START
-Double-click PariPari Anti-HDR 1.7.exe. No installation or internet needed.
+Double-click PariPari-Anti-HDR.exe. No installation or internet needed.
 Uses the Windows JPEG XR codec and .NET Framework. Windows x64.
 Russian instructions: README.ru.txt.
 
