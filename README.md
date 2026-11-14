@@ -22,7 +22,7 @@ The goal is simple: make it easier to share beautiful game screenshots with frie
 
 **[Download the latest Windows release](https://github.com/PariPariKai/PariPari-Anti-HDR/releases/latest)**
 
-Download `PariPari.Anti-HDR.1.7.exe` from **Assets** on the release page and run it.
+Download `PariPari-Anti-HDR.exe` from **Assets** on the release page and run it.
 
 Windows x64. No installation, account or internet connection needed to use the app. Images are processed locally on your computer.
 
@@ -63,13 +63,13 @@ The comparison banner is promotional artwork created with ChatGPT. The interface
 Automatic conversion:
 
 ```powershell
-& '.\PariPari.Anti-HDR.1.7.exe' --convert-auto 'input.jxr' 'output-folder'
+& '.\PariPari-Anti-HDR.exe' --convert-auto 'input.jxr' 'output-folder'
 ```
 
 Manual conversion, with exposure in EV and saturation in percent:
 
 ```powershell
-& '.\PariPari.Anti-HDR.1.7.exe' --convert 'input.jxr' 'output-folder' -3 50
+& '.\PariPari-Anti-HDR.exe' --convert 'input.jxr' 'output-folder' -3 50
 ```
 
 Exit code: `0` for success, `1` for an error. The GUI build does not open a console window.

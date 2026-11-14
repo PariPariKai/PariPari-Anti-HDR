@@ -22,7 +22,7 @@
 
 **[Последняя версия для Windows](https://github.com/PariPariKai/PariPari-Anti-HDR/releases/latest)**
 
-Скачай `PariPari.Anti-HDR.1.7.exe` из раздела **Assets** на странице релиза и запусти.
+Скачай `PariPari-Anti-HDR.exe` из раздела **Assets** на странице релиза и запусти.
 
 Windows x64. Для работы не нужны установка, аккаунт или интернет. Изображения обрабатываются локально на твоём компьютере.
 
@@ -63,13 +63,13 @@ PNG появятся **рядом с оригиналами**, с `_SDR` в ко
 Автоматическое преобразование:
 
 ```powershell
-& '.\PariPari.Anti-HDR.1.7.exe' --convert-auto 'input.jxr' 'output-folder'
+& '.\PariPari-Anti-HDR.exe' --convert-auto 'input.jxr' 'output-folder'
 ```
 
 Ручные настройки: экспозиция в EV и насыщенность в процентах:
 
 ```powershell
-& '.\PariPari.Anti-HDR.1.7.exe' --convert 'input.jxr' 'output-folder' -3 50
+& '.\PariPari-Anti-HDR.exe' --convert 'input.jxr' 'output-folder' -3 50
 ```
 
 Код завершения: `0` — успех, `1` — ошибка. GUI-сборка не открывает консольное окно.

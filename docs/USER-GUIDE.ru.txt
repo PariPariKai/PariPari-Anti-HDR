@@ -93,12 +93,12 @@ float RGB/RGBA scRGB. Обычные SDR PNG и прочие HDR-форматы 
 
 КОМАНДНАЯ СТРОКА
 Для автоматизации:
-"PariPari.Anti-HDR.1.7.exe" --convert "input.jxr" "output-folder" 0 100
+"PariPari-Anti-HDR.exe" --convert "input.jxr" "output-folder" 0 100
 Последние значения: EV и насыщенность в процентах. Для начальных значений интерфейса
 укажите -3 50. Режим командной строки сохраняет прежние значения
 по умолчанию 0 100 для совместимости.
 Автоматическое преобразование:
-"PariPari.Anti-HDR.1.7.exe" --convert-auto "input.jxr" "output-folder"
+"PariPari-Anti-HDR.exe" --convert-auto "input.jxr" "output-folder"
 Код завершения: 0 — успех, 1 — ошибка. GUI-сборка не имеет консоли.
 
 ПРОВЕРКИ

@@ -58,10 +58,10 @@ Saturation remains a manual preference; generative AI is not used.
 Preview and export use the same color conversion.
 
 COMMAND LINE
-"PariPari.Anti-HDR.1.7.exe" --convert "input.jxr" "output-folder" 0 100
+"PariPari-Anti-HDR.exe" --convert "input.jxr" "output-folder" 0 100
 The last two values are EV and saturation percentage (defaults: 0 and 100).
 For the GUI's manual starting values, use -3 50.
-"PariPari.Anti-HDR.1.7.exe" --convert-auto "input.jxr" "output-folder"
+"PariPari-Anti-HDR.exe" --convert-auto "input.jxr" "output-folder"
 Exit status: 0 on success, 1 on error. This GUI build has no console window.
 
 VERIFICATION
